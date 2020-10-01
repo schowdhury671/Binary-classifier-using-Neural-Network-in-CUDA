@@ -141,6 +141,19 @@ __global__ void cu_dsigmoid_a(double* src, double* dst, int n){
 	}
 }
 
+// CUDA DUMMY
+// dummy function to check functionality
+__global__ void cu_dummy(double* src, double* dst){
+	int tid = threadIdx.x + blockIdx.x * blockDim.x;
+	int stride = blockDim.x * gridDim.x;
+	int n=10;
+	while(tid < n){
+		float tmp = __fsub_rd(1.0, src[tid]);
+		dst[tid] = __fmul_rd(tmp, src[tid]);
+		tid += stride;
+	}
+}
+
 
 // CUDA DSIGMOID
 // derivative of sigmoid non-linearity
