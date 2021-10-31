@@ -4,6 +4,13 @@
 
 #define WARP_SIZE 16
 
+//added comparator function
+
+bool sortbysec(const pair<int,int> &a,const pair<int,int> &b)
+{
+    return (a.second < b.second);
+}
+
 // CUDA MULTIPLY
 // do matrix-matrix multiplication
 __global__ void cuda_mat_multiply(const double* A, const double* B, double * C,
