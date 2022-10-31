@@ -1,5 +1,6 @@
 #include <bits/stdc++.h>
 #include <cuda.h>
+//add header
 #include "parallel_utility.cu"
 
 #define DATA_DIM 3072
